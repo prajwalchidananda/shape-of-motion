@@ -63,7 +63,6 @@ def image_stream(img_dir, calib_path, stride, depth_dir: str | None = None):
     # give all images the same calibration
     calibs = torch.tensor([calib_dict[os.path.splitext(im)[0]] for im in img_path_list])
     calib = calibs.mean(dim=0)
-    breakpoint()
     image = cv2.imread(os.path.join(img_dir, img_path_list[0]))
     image, (H0, W0), (H1, W1) = preproc_image(image, calib)
 
