@@ -33,3 +33,5 @@ cucim-cu11==24.6.*
 pylibraft-cu11==24.6.*
 raft-dask-cu11==24.6.*
 cuvs-cu11==24.6.*
+--index-url https://download.pytorch.org/whl/cu118
+xformers
