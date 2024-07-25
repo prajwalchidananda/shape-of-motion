@@ -106,7 +106,7 @@ def align_monodepth_with_metric_depth(
         metric_path = osp.join(metric_depth_dir, imname + ".npy")
         mono_path = osp.join(input_monodepth_dir, imname + ".png")
 
-        mono_disp_map = iio.imread(mono_path)[:, :, :3] / UINT16_MAX
+        mono_disp_map = iio.imread(mono_path) / UINT16_MAX
         metric_disp_map = np.load(metric_path)
         ms_colmap_disp = metric_disp_map - np.median(metric_disp_map) + 1e-8
         ms_mono_disp = mono_disp_map - np.median(mono_disp_map) + 1e-8
