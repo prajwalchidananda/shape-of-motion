@@ -167,7 +167,7 @@ def align_monodepth_with_colmap(
         monodepth_path = osp.join(
             input_monodepth_dir, osp.splitext(image.name)[0] + ".png"
         )
-        mono_disp_map = iio.imread(monodepth_path)[:, :, :3] / UINT16_MAX
+        mono_disp_map = iio.imread(monodepth_path) / UINT16_MAX
 
         colmap_disp = 1.0 / np.clip(colmap_depth, a_min=1e-6, a_max=1e6)
         mono_disp = cv2.remap(
